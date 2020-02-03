@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Web site created using create-react-app">
+  <title>React App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://federicozacayan.github.io/tutorial/css/prism.css" rel="stylesheet">
+<style>textarea {
+  width: 100%;
+  margin: .5rem auto; }
+
+.buttons button {
+  cursor: pointer;
+  background-color: #00b7ff;
+  padding: .5rem;
+  margin: .5rem;
+  border-radius: 1rem;
+  color: white;
+  text-transform: capitalize;
+  display: inline-block;
+  width: auto; }
+
+button {
+  width: 50%; }
+
+.styler {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem; }
+  .styler .background {
+    position: fixed;
+    background-color: #000;
+    opacity: .5;
+    height: 200px;
+    top: 0;
+    margin-left: -1rem;
+    float: left;
+    width: 100%;
+    z-index: -1;
+    height: 100vh; }
+</style></head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"><div class="container"><div><div><h1>React 101</h1><p>NOTE: This is a review of REACT, we do not care about DESIGN.</p><h2>How to start a project?</h2><pre class="  language-javascript"><code class="  language-javascript"><span class="token number">1</span><span class="token punctuation">)</span> install node<span class="token punctuation">.</span>js <span class="token comment">// just google how to do it</span>
+<span class="token number">2</span><span class="token punctuation">)</span> npx create<span class="token operator">-</span>react<span class="token operator">-</span>app my<span class="token operator">-</span>app
+<span class="token number">3</span><span class="token punctuation">)</span> cd my<span class="token operator">-</span>app
+<span class="token number">4</span><span class="token punctuation">)</span> npm start</code></pre><p>Delete everything except the following files:</p><pre class="  language-css"><code class="  language-css">node_modules/
+public/index.html
+src/App.js
+src/index.js
+.gitignore
+package-lock.json
+package.json</code></pre><p>public/index.html</p><pre class="  language-html"><code class="  language-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>React Tutorial<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>root<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre><p>src/index.js</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>src/App.js</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      Hello world<span class="token operator">!</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><p>After this you have to run the app in http://localhost:3000</p><pre class="  language-javascript"><code class="  language-javascript">npm start</code></pre><h2>How to work with SCSS</h2><pre class="  language-html"><code class="  language-html">npm install node-sass</code></pre><p>src/index.js</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> <span class="token string">'./mysass.scss'</span></code></pre><p>mysass.scss</p><pre class="  language-css"><code class="  language-css"><span class="token selector">body</span><span class="token punctuation">{</span>
+    <span class="token selector">.container</span><span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><h2>How to create a component</h2><p>Assuming you have src/index.js</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./components/App'</span> <span class="token punctuation">;</span> <span class="token comment">// &lt;--- check this location</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>You can create components in this way</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Header <span class="token keyword">from</span> <span class="token string">'./Header'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Body <span class="token keyword">from</span> <span class="token string">'./Body'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Footer <span class="token keyword">from</span> <span class="token string">'./Footer'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Header<span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Body<span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Footer<span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre><h2>Containers Components and Props</h2><p>It is a way of how to work with react. Assuming we have the "container-component" src/Header.js</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> Link <span class="token keyword">from</span> <span class="token string">'./Link'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//check,  we retrieve data here</span>
+    <span class="token comment">//and we send it to the component as 'props'</span>
+    <span class="token keyword">let</span> links <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Home"</span><span class="token punctuation">,</span> <span class="token string">"About us"</span><span class="token punctuation">,</span> <span class="token string">"Contact us"</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>header<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Link link<span class="token operator">=</span><span class="token punctuation">{</span>links<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Link link<span class="token operator">=</span><span class="token punctuation">{</span>links<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Link link<span class="token operator">=</span><span class="token punctuation">{</span>links<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>header<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><p>We call "representational-component" the following component src/Link.js because it is reusable and it does not retrieve data.</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Link</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//check there is no data process here</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>link<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>link<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre><p>This is the way we use props.</p><h2>Array of Components (Array.map())</h2><p>We can use array of components to be render as Components them self.</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> Link <span class="token keyword">from</span> <span class="token string">'./Link'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> links <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Home"</span><span class="token punctuation">,</span> <span class="token string">"About us"</span><span class="token punctuation">,</span> <span class="token string">"Contact us"</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>header<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+                <span class="token punctuation">{</span>links<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span> <span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>Link link<span class="token operator">=</span><span class="token punctuation">{</span>element<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>header<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><h2>State in React</h2><p>The component will be re-rendered each time the state is update.</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">increment</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">setCount</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            Count <span class="token punctuation">:</span> <span class="token punctuation">{</span>count<span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>increment<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token string">"increase"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><h2>How to update an Array State</h2><p>We have only one method to update specific state. So, if we work with arrays we have to use array functions avoiding update the current state. We just have to replace it. That is why we set a new array.</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">addElement</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> newCount <span class="token operator">=</span> count<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>
+        <span class="token comment">//const newCount = [...count, 'x'];</span>
+        <span class="token function">setCount</span><span class="token punctuation">(</span>newCount<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">deleteByValue</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> newCount <span class="token operator">=</span> count<span class="token punctuation">.</span><span class="token function">filer</span><span class="token punctuation">(</span><span class="token parameter">n</span> <span class="token operator">=&gt;</span> n <span class="token operator">!==</span> <span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setCount</span><span class="token punctuation">(</span>newCount<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">deleteByPosition</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> newCount <span class="token operator">=</span> count<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">n</span> <span class="token operator">=&gt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        newCount<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">setCount</span><span class="token punctuation">(</span>newCount<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">replacingByPosition</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> newCount <span class="token operator">=</span> count<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">n</span> <span class="token operator">=&gt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        newCount<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">)</span>
+        <span class="token function">setCount</span><span class="token punctuation">(</span>newCount<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            Count <span class="token punctuation">:</span> <span class="token punctuation">{</span>count<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>addElement<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token string">"Add element"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>deleteByValue<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token string">"Delete by value"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>deleteByPosition<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token string">"Delete by position"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>replacingByPosition<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token string">"Replacing by position"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><h2>LocalStorage in React</h2><p>We can persist data in the browser using localStorage. Unfortunately, it save only strings, so we have to use JSON.stringify() and JSON.parse()</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span>
+        <span class="token function">useState</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'count'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">increment</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">setCount</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'count'</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            Count <span class="token punctuation">:</span> <span class="token punctuation">{</span>count<span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>increment<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token string">"increase"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre><h2>How to avoid re-execution</h2><p>Using useEffect() function with no dependent variable we can run a piece of code only the first time the component is rendered.</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> User <span class="token keyword">from</span> <span class="token string">'./User'</span>
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">[</span>info<span class="token punctuation">,</span> setInfo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'http://jsonplaceholder.typicode.com/users'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">setInfo</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>console<span class="token punctuation">.</span>log<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&lt;-- no dependent variable</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> info <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Loading<span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>info<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">contact</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>User key<span class="token operator">=</span><span class="token punctuation">{</span>contact<span class="token punctuation">.</span>id<span class="token punctuation">}</span> contact<span class="token operator">=</span><span class="token punctuation">{</span>contact<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>User<span class="token operator">&gt;</span>
+            <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre><h2>How to index jxs</h2><p>If we do not index JXS element the console will show us a warning. It have to be an string and we can use .toString() function.
+</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'email@email.com'</span><span class="token punctuation">,</span> <span class="token string">'123-4567'</span><span class="token punctuation">,</span> <span class="token string">'7 Queen Street'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>aside<span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>div key<span class="token operator">=</span><span class="token punctuation">{</span>element<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>element<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>aside<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><h2>How to refer to an Element</h2><p>We can use the ref attribute to get a pointer to an element itself.
+</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> specialElement1 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> specialElement2 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>   
+    <span class="token keyword">function</span> <span class="token function">focus1</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        specialElement1<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">let</span> <span class="token function-variable function">focus2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        specialElement2<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>focus1<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token string">"Focus Input 1"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>focus2<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token string">"Focus Input 2"</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> value<span class="token operator">=</span><span class="token string">"Input 1"</span> ref<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">elem</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>specialElement1 <span class="token operator">=</span> elem<span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> value<span class="token operator">=</span><span class="token string">"Input 2"</span> ref<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">elem</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>specialElement2 <span class="token operator">=</span> elem<span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><h1>Context</h1><h2>How to share data between components.</h2><p>We need several things:</p><pre class="  language-html"><code class="  language-html">1) A Context Component where place the data and its update methods, witch is a kind of <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CONTAINER-VARIABLE</span><span class="token punctuation">&gt;</span></span>.
+2) A <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PROVIDER</span><span class="token punctuation">&gt;</span></span> (Container Component) to retrieve data and configure update methods.
+3) One or many <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CONSUMERS</span><span class="token punctuation">&gt;</span></span> (Representational Components) to show that data and execute its update methods.</code></pre><p>The Consumer have to be a sub component of a Provider to receive a context from it.</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/context/ThemeContext.js */</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>createContext<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ThemeContext <span class="token operator">=</span> <span class="token function">createContext</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> ThemeContext<span class="token punctuation">;</span></code></pre><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/component/App.js */</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span>useState<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ThemeContext <span class="token keyword">from</span> <span class="token string">'../context/ThemeContext'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Consumer <span class="token keyword">from</span> <span class="token string">'./Consumer'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>val<span class="token punctuation">,</span> setVal<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>val<span class="token punctuation">,</span> setVal<span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>ThemeContext<span class="token punctuation">.</span>Provider value<span class="token operator">=</span><span class="token punctuation">{</span>obj<span class="token punctuation">}</span> <span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Consumer <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>ThemeContext<span class="token punctuation">.</span>Provider<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre><p>The context receive a particular "props", named value where is place the object to share with the sub components.</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/component/comsumer.js */</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span>useEffect<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> ThemeContext <span class="token keyword">from</span> <span class="token string">'../context/ThemeContext'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Consumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>ThemeContext<span class="token punctuation">.</span>Consumer<span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">{</span>obj<span class="token punctuation">.</span>val<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"button"</span> value<span class="token operator">=</span><span class="token string">"increment"</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>obj<span class="token punctuation">.</span><span class="token function">setVal</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>val<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+            <span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ThemeContext<span class="token punctuation">.</span>Consumer<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><h2>No server</h2><p>To build the web page with no server you can configure package.json</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token punctuation">{</span>
+  <span class="token string">"homepage"</span><span class="token punctuation">:</span> <span class="token string">"./"</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span></code></pre><p>And then run:</p><pre class="  language-javascript"><code class="  language-javascript">npm build</code></pre><p>I will be "build" a folder named dist with all the files needed.</p><pre class="  language-javascript"><code class="  language-javascript"><span class="token operator">/</span>build</code></pre><h1>Redux</h1><p>It looks like a different topic, but it is the same concept of Context, it just  has additional implementations.</p><pre class="  language-html"><code class="  language-html">Context has:
+1) <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CONTAINER-VARIABLE</span><span class="token punctuation">&gt;</span></span>
+2) <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PROVIDER</span><span class="token punctuation">&gt;</span></span>
+3) <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CONSUMER</span><span class="token punctuation">&gt;</span></span></code></pre><pre class="  language-html"><code class="  language-html">Redux has:
+1) Many <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CONTAINER-VARIABLE</span><span class="token punctuation">&gt;</span></span>, plus channels, plus default value.
+2) <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>PROVIDER</span><span class="token punctuation">&gt;</span></span> replacing "value" props by "store" props instead.
+3) <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CONSUMER</span><span class="token punctuation">&gt;</span></span> consuming different <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>CONTAINER-VARIABLE</span><span class="token punctuation">&gt;</span></span>s.
+4) <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BROADCAST</span><span class="token punctuation">&gt;</span></span> with a channel and none, one or many params.</code></pre><h2>Let's start it</h2><pre class="  language-javascript"><code class="  language-javascript">npm install redux react<span class="token operator">-</span>redux</code></pre><h2>Actions &lt;BROADCAST&gt;</h2><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/actions/index.js */</span>
+<span class="token comment">// one action one channel</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">f1</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token comment">//channel A</span>
+        parameter<span class="token punctuation">:</span> number
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// other action one channel</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">f2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'B'</span> <span class="token comment">//channel B</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><h2>Reducers &lt;CONTAINER-VARIABLE&gt;</h2><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/reducers/counter.js */</span>
+<span class="token comment">// the behaviour depends on the channel and params.</span>
+<span class="token keyword">const</span> <span class="token function-variable function">counterReducer</span> <span class="token operator">=</span>  <span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> action</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'A'</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>parameter<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// optional param</span>
+                <span class="token keyword">return</span> state <span class="token operator">+</span> action<span class="token punctuation">.</span>parameter<span class="token punctuation">;</span> 
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token string">'B'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> counterReducer<span class="token punctuation">;</span></code></pre><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/reducers/isloged.js */</span>
+<span class="token comment">// the behaviour depends on the channel and param.</span>
+<span class="token keyword">const</span> <span class="token function-variable function">loggedReducer</span> <span class="token operator">=</span>  <span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'A'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token string">'B'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> loggedReducer<span class="token punctuation">;</span></code></pre><h2>List of Reducers</h2><p>The reducers are joined in a specific reducer container. </p><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/reducers/index.js */</span>
+<span class="token keyword">import</span> counterReducer <span class="token keyword">from</span> <span class="token string">"./counter"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> loggedReducer <span class="token keyword">from</span> <span class="token string">"./isloged"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>combineReducers<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'redux'</span>
+
+<span class="token keyword">const</span> reducers <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    counter<span class="token punctuation">:</span> counterReducer<span class="token punctuation">,</span>
+    islooged<span class="token punctuation">:</span> loggedReducer
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> reducers<span class="token punctuation">;</span></code></pre><h1>Provider &lt;PROVIDER&gt;
+</h1><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/index.js */</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Container <span class="token keyword">from</span> <span class="token string">'./components/Container'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'redux'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> reducers <span class="token keyword">from</span> <span class="token string">'./reducers/index'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-redux'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> reducerList <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>reducers<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// List of Reducers</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span>reducerList<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Container <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h2>Consumer &lt;CONSUMER&gt;</h2><pre class="  language-javascript"><code class="  language-javascript"><span class="token comment">/* src/components/Container.js */</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">'./Button'</span> <span class="token comment">// Reusable component</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useSelector<span class="token punctuation">,</span> useDispatch <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-redux'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>f1<span class="token punctuation">,</span> f2<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../actions/index'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Container</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> counter <span class="token operator">=</span> <span class="token function">useSelector</span><span class="token punctuation">(</span><span class="token parameter">state</span><span class="token operator">=&gt;</span>state<span class="token punctuation">.</span>counter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> islooged <span class="token operator">=</span> <span class="token function">useSelector</span><span class="token punctuation">(</span><span class="token parameter">state</span><span class="token operator">=&gt;</span>state<span class="token punctuation">.</span>islooged<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> reduxManager <span class="token operator">=</span> <span class="token function">useDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span> <span class="token function">reduxManager</span><span class="token punctuation">(</span><span class="token function">f1</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span> text<span class="token operator">=</span><span class="token string">"add"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span> <span class="token function">reduxManager</span><span class="token punctuation">(</span><span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span> text<span class="token operator">=</span><span class="token string">"take"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>counter<span class="token punctuation">}</span> <span class="token operator">-</span> <span class="token punctuation">{</span><span class="token punctuation">(</span>islooged<span class="token punctuation">)</span><span class="token operator">?</span><span class="token string">'true'</span><span class="token punctuation">:</span><span class="token string">'false'</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><p></p></div><div class="styler" style="display: none;"><div class="background"></div><textarea>Title</textarea><br><button>Duplicate</button><button>Delete</button><br><div class="buttons"><button>h1 </button><button>h2 </button><button>p </button><button>html </button><button>css </button><button>javascript </button></div><label for="up" class="btn btn-primary btn-block btn-outlined">Upload Json</label><input id="up" type="file" accept="text/plain" style="display: none;"><label for="down" class="btn btn-primary btn-block btn-outlined">Download Json</label><button id="down" style="display: none;">Export</button><label for="html" class="btn btn-primary btn-block btn-outlined">Download HTML</label><button id="html" style="display: none;">Export</button></div></div></div></div>
+<script src="/static/js/bundle.js"></script><script src="/static/js/1.chunk.js"></script><script src="/static/js/main.chunk.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script src="https://federicozacayan.github.io/tutorial/js/prism.js"></script>
+
+
+</body></html>
